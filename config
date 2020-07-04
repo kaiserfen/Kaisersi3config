@@ -187,9 +187,8 @@ hide_edge_borders both
 gaps outer 15
 gaps inner 10
 
-exec nitrogen --restore &
-exec compton -f
-
+exec nitrogen --restore & 
+exec xcompmgr -c -f -n 
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock exec pkill -SIGRTMIN+11 i3blocks
 
