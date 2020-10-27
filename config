@@ -155,7 +155,7 @@ hide_edge_borders both
 gaps outer 30
 gaps inner 30
 exec nitrogen --restore & 
-exec compton  
+exec xcompmgr -c -f -n
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock exec pkill -SIGRTMIN+11 i3blocks
 #For weather, use this in neofetch; 
