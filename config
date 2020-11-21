@@ -2,7 +2,8 @@
 
 # Please see https://i3wm.org/docs/userguide.html 
 set $mod Mod1
-#font pango:monospace 8
+#Mod4 recommended for modern keyboards~
+#font pango:SF-Pro-Display-Thin
 font pango:DejaVu Sans Mono 8
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -80,13 +81,13 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $ws1 "🦊"
-set $ws2 "📬"
-set $ws3 "🕹"
-set $ws4 "🎵"
-set $ws5 "🍿"
-set $ws6 "6"
-set $ws7 "7"
+set $ws1 "1 🦊"
+set $ws2 "2 📬"
+set $ws3 "3 🕹"
+set $ws4 "4 🎵"
+set $ws5 "5 🍿"
+set $ws6 "6 🔑"
+set $ws7 "7 ☎️"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
@@ -159,5 +160,4 @@ exec nitrogen --restore &
 exec xcompmgr -c -f -n
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock exec pkill -SIGRTMIN+11 i3blocks
-#For weather, use this in neofetch; 
-#prin "Weather" "$(curl wttr.in/?0?q?T | awk '/°(C|F)/ {printf $(NF-1) $(NF) " ("a")"} /,/ {a=$0}')"
+#exec --no-startup-id xfce4-panel --disable-wm-check
