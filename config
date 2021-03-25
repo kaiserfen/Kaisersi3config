@@ -160,4 +160,8 @@ exec nitrogen --restore &
 exec xcompmgr -c -f -n
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock exec pkill -SIGRTMIN+11 i3blocks
-#exec --no-startup-id xfce4-panel --disable-wm-check
+#exec --no-startup-id xfce4-panel --disable-wm-check 
+# XFCE4 panelmore user friendly, but for my duel monitors I use i3blocks, if you're completly new use xfce panel instead.
+# arandr for monitor resoultions.
+# need to set that up for startup? For me my duel monitors are a bit akward, to get add this to the above 
+#setting add "exec /path/to/script" the script is provided by arandr, save it where you like.
