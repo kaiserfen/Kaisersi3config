@@ -1,4 +1,4 @@
-# If you fuck up the config, delete this config file and re-run "i3-config-wizard".
+# If you mess up the config, delete this config and re-run "i3-config-wizard".
 
 # Please see https://i3wm.org/docs/userguide.html 
 set $mod Mod1
@@ -16,7 +16,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 floating_modifier $mod
-# start a terminal
+# start a terminal, I find terminator a good n simple one, replace with your pref
 bindsym $mod+Return exec terminator
 
 # kill focused window
@@ -25,10 +25,7 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec "rofi -show run"
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# I prefer rofi, simple and can be configured graphically.
 
 # change focus
 bindsym $mod+j focus left
@@ -66,7 +63,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
 #bindsym $mod+w layout tabbed
-#Ihate these things, a torn foreskin cause's less pain 
+#I hate these things
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -81,6 +78,7 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+#Adds a colorful flair to the workspaces, does not work in polybar.
 set $ws1 "1 🦊"
 set $ws2 "2 📬"
 set $ws3 "3 🕹"
@@ -145,12 +143,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
+# Start i3bar, I comment it out in prefrence to polybar
+#bar {
 
-        position top        status_command i3blocks
-} 
+        #position top        status_command i3blocks
+#} 
 # My Settings
 for_window [class="^.*"] border pixel 2
 hide_edge_borders both
@@ -160,8 +157,11 @@ exec nitrogen --restore &
 exec xcompmgr -c -f -n
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock exec pkill -SIGRTMIN+11 i3blocks
+exec_always --no-startup-id $HOME/polybar.sh
+#Put a polybar script in ur home folder for this
+
 #exec --no-startup-id xfce4-panel --disable-wm-check 
-# XFCE4 panelmore user friendly, but for my duel monitors I use i3blocks, if you're completly new use xfce panel instead.
+# XFCE4 panelmore user friendly, but for my duel monitors I use polybar, if you're completly new use xfce panel instead.
 # arandr for monitor resoultions.
 # need to set that up for startup? For me my duel monitors are a bit akward, to get add this to the above 
 #setting add "exec /path/to/script" the script is provided by arandr, save it where you like.
